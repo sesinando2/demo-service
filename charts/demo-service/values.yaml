@@ -52,7 +52,7 @@ canary:
   host: acme.com
 
 service:
-  name: springboot-template
+  name: demo-service
   type: ClusterIP
   externalPort: 80
   internalPort: 8080

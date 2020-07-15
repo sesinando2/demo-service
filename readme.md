@@ -25,7 +25,7 @@ Create a new repository for the new service. (e.g. `authentication-service`).
 
 Clone this project and name it after the new service.
 ```
-git clone https://github.com/Ibenta/springboot-template.git authentication-service
+git clone https://github.com/Ibenta/demo-service.git authentication-service
 ```
 
 Update the url of the origin to the newly created repository.
@@ -48,7 +48,7 @@ From time to time, there will be changes to this project that should will affect
 
 Create an remote upstream.
 ```
-git remote add upstream https://github.com/Ibenta/springboot-template.git
+git remote add upstream https://github.com/sesinando2/demo-service.git
 ```
 
 Fetch upstream.

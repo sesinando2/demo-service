@@ -4,7 +4,7 @@ pipeline {
   }
   environment {
     ORG = 'ibenta'
-    APP_NAME = 'springboot-template'
+    APP_NAME = 'demo-service'
     CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
     DOCKER_REGISTRY_ORG = 'ibenta'
   }
@@ -74,7 +74,7 @@ pipeline {
       }
       steps {
         container('maven') {
-          dir('charts/springboot-template') {
+          dir('charts/demo-service') {
             sh "jx step changelog --version v\$(cat ../../VERSION)"
 
             // release the helm chart
