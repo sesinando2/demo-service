@@ -1,0 +1,12 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus, health
+      path-mapping:
+        prometheus: metrics
+
+server:
+  port: 8080
+  error:
+    include-stacktrace: always

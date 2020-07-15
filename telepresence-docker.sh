@@ -1,0 +1,1 @@
+telepresence --swap-deployment $1 --docker-run --rm -v$(pwd):/build -v $HOME/.m2/repository:/m2 -p 8080:8080 -p 5005:5005 maven:3.6.2-jdk-11-slim mvn -Dmaven.repo.local=/m2 -f /build spring-boot:run -Dspringboot-run.profiles=template -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=*:5005"
