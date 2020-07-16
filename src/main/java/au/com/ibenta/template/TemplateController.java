@@ -1,6 +1,8 @@
 package au.com.ibenta.template;
 
 import io.swagger.annotations.Api;
+import lombok.RequiredArgsConstructor;
+import org.springframework.boot.info.BuildProperties;
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,8 +19,16 @@ import static java.lang.String.format;
 @Api(tags = "template")
 @RestController
 @Profile("template")
+@RequiredArgsConstructor
 @RequestMapping("/template")
 public class TemplateController {
+
+    private final BuildProperties buildProperties;
+
+    @GetMapping("/version")
+    Mono<ResponseEntity<String>> version() {
+        return Mono.justOrEmpty(buildProperties).map(BuildProperties::getVersion).map(ResponseEntity::ok);
+    }
 
     @GetMapping
     Flux<Template> list() {
