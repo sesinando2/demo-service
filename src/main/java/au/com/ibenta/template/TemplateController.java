@@ -27,7 +27,8 @@ public class TemplateController {
 
     @GetMapping("/version")
     Mono<ResponseEntity<String>> version() {
-        return Mono.justOrEmpty(buildProperties).map(BuildProperties::getVersion).map(ResponseEntity::ok);
+        throw new RuntimeException("Error");
+//        return Mono.justOrEmpty(buildProperties).map(BuildProperties::getVersion).map(ResponseEntity::ok);
     }
 
     @GetMapping
